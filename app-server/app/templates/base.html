@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <title>Monitoring Demo</title>
+  <style>
+    body{font-family:sans-serif;max-width:480px;margin:40px auto;padding:0 16px}
+    input,button{display:block;width:100%;padding:8px;margin:8px 0;box-sizing:border-box}
+    .flash{background:#fff3cd;padding:8px;border-radius:4px}
+    li form{display:inline}
+  </style>
+</head>
+<body>
+  <nav><a href="/">Home</a> | <a href="/login">Login</a> |
+       <a href="/register">Register</a> | <a href="/tasks">Tasks</a> |
+       <a href="/logout">Logout</a></nav>
+  {% for m in get_flashed_messages() %}<p class="flash">{{ m }}</p>{% endfor %}
+  {% block content %}{% endblock %}
+</body>
+</html>

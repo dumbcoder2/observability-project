@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block content %}
+<h2>My Tasks</h2>
+<form method="post">
+  <input name="title" placeholder="New task" required>
+  <button>Add</button>
+</form>
+<ul>
+{% for t in tasks %}
+  <li>{{ t.title }}
+    <form method="post" action="/tasks/delete/{{ t.id }}"><button>x</button></form>
+  </li>
+{% endfor %}
+</ul>
+{% endblock %}
